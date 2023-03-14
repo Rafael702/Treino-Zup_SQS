@@ -9,15 +9,17 @@ public class VendaRequest {
 
     private TipoPagamento tipoPagamento;
 
+    private String emailCliente;
+
     public VendaRequest() {
     }
 
-    public Venda toModel(Livro livro, Estoque estoque){
-        if (estoque.estaVazio()){
+    public Venda toModel(Livro livro, Estoque estoque) {
+        if (estoque.estaVazio()) {
             throw new ImpossibilidadeVendaException();
         }
 
-        return new Venda(livro, estoque.getValorUnitario(), this.tipoPagamento);
+        return new Venda(livro, estoque.getValorUnitario(), this.tipoPagamento, this.emailCliente);
     }
 
     public void setIdLivro(Long idLivro) {
@@ -30,5 +32,9 @@ public class VendaRequest {
 
     public Long getIdLivro() {
         return idLivro;
+    }
+
+    public String getEmailCliente() {
+        return emailCliente;
     }
 }

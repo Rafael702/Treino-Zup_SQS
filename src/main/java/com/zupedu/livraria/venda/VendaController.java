@@ -47,8 +47,14 @@ public class VendaController {
         logger.info("Realizado Baixa no Estoque do Produto : {} , Quantidade : {}",
                 estoque.getLivro().getId(), estoque.getQuantidade());
 
-        notificacaoService.send("email", venda.getLivro().getTitulo(), "mensagem");
-
+        if (venda.realizaNotificacao()) {
+            logger.info("Solicitando notificacao");
+            notificacaoService.send(
+                    venda.getEmailCliente(),
+                    venda.getTituloNotificacao(),
+                    venda.getMensagemNotificacao()
+            );
+        }
         return VendaResponse.from(venda);
     }
 }
