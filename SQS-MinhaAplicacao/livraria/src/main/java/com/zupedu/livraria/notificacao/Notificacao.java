@@ -45,4 +45,13 @@ public class Notificacao {
     public void setMensagem(String mensagem) {
         this.mensagem = mensagem;
     }
+
+    @Override
+    public String toString() {
+        return "Notificacao{" +
+                ", tipo='" + tipoDeNotificacao + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", mensagem='" + mensagem + '\'' +
+                '}';
+    }
 }
