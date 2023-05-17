@@ -19,7 +19,10 @@ spring:
         - org.springframework.cloud.aws.autoconfigure.context.ContextInstanceDataAutoConfiguration
         - org.springframework.cloud.aws.autoconfigure.context.ContextStackAutoConfiguration
         - org.springframework.cloud.aws.autoconfigure.context.ContextCredentialsAutoConfiguration
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5dd765672a54af976c035f0d28d230cfeaa68fbd
 management:
   health:
     db:

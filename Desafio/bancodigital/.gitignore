@@ -31,10 +31,6 @@ hs_err_pid*
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff
-<<<<<<< HEAD
-*.idea
-=======
->>>>>>> 5dd765672a54af976c035f0d28d230cfeaa68fbd
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/**/usage.statistics.xml
@@ -151,9 +147,6 @@ modules.xml
 hs_err_pid*
 replay_pid*
 
-# Every .md
-*.md
-
 ### Maven ###
 target/
 pom.xml.tag
@@ -166,10 +159,6 @@ buildNumber.properties
 .mvn/timing.properties
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
-<<<<<<< HEAD
-mvnw.cmd
-=======
->>>>>>> 5dd765672a54af976c035f0d28d230cfeaa68fbd
 
 # Eclipse m2e generated files
 # Eclipse Core
