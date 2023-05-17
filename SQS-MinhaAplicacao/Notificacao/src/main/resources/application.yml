@@ -1,0 +1,62 @@
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/livraria?createDatabaseIfNotExist=true&serverTimezone=UTC"
+    password: admin
+    username: admin
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    ddl-auto: create
+    generate-ddl: true
+    show-sql: false
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  autoconfigure:
+    exclude:
+        - org.springframework.cloud.aws.autoconfigure.context.ContextRegionProviderAutoConfiguration
+        - org.springframework.cloud.aws.autoconfigure.context.ContextInstanceDataAutoConfiguration
+        - org.springframework.cloud.aws.autoconfigure.context.ContextStackAutoConfiguration
+        - org.springframework.cloud.aws.autoconfigure.context.ContextCredentialsAutoConfiguration
+management:
+  health:
+    db:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    build:
+      enabled: true
+    env:
+      enabled: true
+    git:
+      enabled: true
+    java:
+      enabled: true
+
+info:
+  application:
+    name: Livraria
+    description: Aplicação feita para Treinamento de Métricas e monitoramento
+    version: '@project.version@'
+    spring-cloud-version: '@spring-cloud.version@'
+    spring-boot-version: '@project.parent.version@'
+
+cloud:
+  aws:
+    region:
+      static: sa-east-1
+      auto  : false
+    credentials:
+      access-key: acesso
+      secret-key: secreto
+    end-point:
+      uri: http://localhost:4566
+    queue:
+      name: notificacao
